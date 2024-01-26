@@ -42,9 +42,12 @@ class Game {
       this.check();
       this.regenerateTrack();
       this.view.render(this.track);
-      this.enemy.die(this.boomerang.position);
       this.boomerang.fly(this.enemy.skin, this.hero.position);
-    }, 20);
+      if (this.enemy.skin !== '💀') {
+        this.enemy.moveLeft(this.boomerang.position);
+      }
+      this.enemy.die(this.boomerang.position);
+    }, 80);
   }
 }
 
