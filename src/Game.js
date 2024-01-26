@@ -15,7 +15,7 @@ class Game {
     this.trackLength = trackLength;
     this.hero = new Hero({ position: 10 }); // Герою можно аргументом передать бумеранг.
     this.enemy = new Enemy({ position: 55 });
-    this.boomerang = new Boomerang({ position: 11, positEnemy: this.enemy.position });
+    this.boomerang = new Boomerang({ position: 11, positEnemy: this.enemy.position, skinEn: this.enemy.skin });
     this.view = new View();
     this.track = [];
     this.regenerateTrack();
@@ -42,7 +42,8 @@ class Game {
       this.check();
       this.regenerateTrack();
       this.view.render(this.track);
-      this.boomerang.fly();
+      this.enemy.die(this.boomerang.position);
+      this.boomerang.fly(this.enemy.skin, this.hero.position);
     }, 20);
   }
 }
