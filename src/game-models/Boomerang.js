@@ -9,16 +9,6 @@ class Boomerang {
     this.positEnemy = positEnemy;
   }
 
-  fly() {
-    if (this.position >= this.positEnemy) {
-      this.moveLeft();
-    }
-
-    if (this.position < this.positEnemy) {
-      this.moveRight();
-    }
-  }
-
   moveLeft() {
     // Идём влево.
     this.position -= 1;
@@ -28,6 +18,34 @@ class Boomerang {
     // Идём вправо.
     this.position += 1;
   }
+
+  fly(skin, heroPos) {
+    if (skin === '💀' && heroPos < this.position) {
+      this.moveLeft();
+    } else if (skin !== '💀') {
+      this.moveRight();
+    }
+  }
+
+  // async fly() {
+  //   do {
+  //     await new Promise((res) => {
+  //       setTimeout(() => {
+  //         res();
+  //       }, 100);
+  //     });
+  //     this.moveRight();
+  //   } while (this.position < this.positEnemy);
+
+  //   do {
+  //     await new Promise((res) => {
+  //       setTimeout(() => {
+  //         res();
+  //       }, 100);
+  //     });
+  //     this.moveLeft();
+  //   } while (this.position > this.positEnemy);
+  // }
 }
 
 module.exports = Boomerang;
