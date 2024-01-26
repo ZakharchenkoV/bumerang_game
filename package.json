@@ -12,11 +12,12 @@
     "sequelize": "^6.21.0"
   },
   "devDependencies": {
-    "eslint": "^8.18.0",
+    "eslint": "^8.56.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.26.0"
+    "eslint-plugin-import": "^2.29.1"
   },
   "scripts": {
+    "start": "node run.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
