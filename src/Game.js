@@ -13,9 +13,9 @@ const View = require('./View');
 class Game {
   constructor({ trackLength }) {
     this.trackLength = trackLength;
-    this.boomerang = new Boomerang({ position: 11 });
     this.hero = new Hero({ position: 10 }); // Герою можно аргументом передать бумеранг.
-    this.enemy = new Enemy();
+    this.enemy = new Enemy({ position: 55 });
+    this.boomerang = new Boomerang({ position: 11, positEnemy: this.enemy.position });
     this.view = new View();
     this.track = [];
     this.regenerateTrack();
@@ -42,6 +42,7 @@ class Game {
       this.check();
       this.regenerateTrack();
       this.view.render(this.track);
+      this.boomerang.fly();
     }, 20);
   }
 }
