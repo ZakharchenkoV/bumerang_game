@@ -8,17 +8,18 @@ class Enemy {
   }
 
   generateSkin() {
-    const skins = ['👾', '💀', '👹', '👻', '👽', '👿', '💩', '🤡', '🤺', '🧛', '🧟', '🎃'];
+    const skins = ['🕺', '👹', '👻', '👽', '👿', '🤡', '🤺', '🧛', '🧟'];
     this.skin = skins[Math.floor(Math.random() * skins.length)];
   }
 
-  moveLeft() {
-    // Идём влево.
-    this.position -= 1;
+  moveLeft(posBoom) {
+    if (this.position > posBoom) {
+      this.position -= 1;
+    }
   }
 
-  die(param) {
-    if (this.position === param) {
+  die(posBoom) {
+    if (this.position === posBoom) {
       this.skin = '💀';
       console.log('Enemy is dead!');
     }

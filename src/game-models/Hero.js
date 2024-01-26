@@ -2,7 +2,7 @@
 
 class Hero {
   constructor({position}) {
-    this.skin = '🤠';
+    this.skin = '🦇';
     this.position = position;
   }
 
