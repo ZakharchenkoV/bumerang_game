@@ -1,9 +1,9 @@
 // Враг.
 
 class Enemy {
-  constructor() {
+  constructor(position) {
+    this.position = 55;
     this.generateSkin();
-    this.position = 2;
   }
 
   generateSkin() {
