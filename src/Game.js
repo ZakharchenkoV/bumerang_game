@@ -7,7 +7,7 @@ const Enemy = require('./game-models/Enemy');
 // const Boomerang = require('./game-models/Boomerang');
 const View = require('./View');
 
-// Основной класс игры.ss
+// Основной класс игры.ssssss
 // Тут будут все настройки, проверки, запуск.
 
 class Game {
